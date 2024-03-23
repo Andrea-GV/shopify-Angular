@@ -1,0 +1,62 @@
+<main>
+    <section>
+        <div class="botones">   <!-- Botones de filtro, búsqueda y vista-->
+
+        </div>
+        <h2 class="lista">Listado de productos</h2>
+        <div class="products row">
+            <div class="product col-12 col-sm-6 col-md-3" *ngFor="let producto of arrProductos">
+                <div>
+                    <img [src]="producto.image" alt="">
+                    <h4>{{producto.name}}</h4>
+                    <h3>{{producto.price}}</h3>
+                    <span>{{producto.description}}</span>
+                    <div class="valoracion">
+                        <input type="radio" name="estrellas" id="radio5" value="5">
+                        <label for="radio5">
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.00016 8.31066L9.42008 10.3359L8.51253 6.51887L11.534 3.95062L7.55518 3.61398L6.00016 0.0195312L4.44515 3.61398L0.466309 3.95062L3.48226 6.51887L2.58024 10.3359L6.00016 8.31066Z"
+                                fill="#FB8200" />
+                            </svg>
+                        </label>
+                        <input type="radio" name="estrellas" id="radio4" value="4">
+                        <label for="radio4">
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.00016 8.31066L9.42008 10.3359L8.51253 6.51887L11.534 3.95062L7.55518 3.61398L6.00016 0.0195312L4.44515 3.61398L0.466309 3.95062L3.48226 6.51887L2.58024 10.3359L6.00016 8.31066Z"
+                                fill="#FB8200" />
+                            </svg>
+                        </label>
+                        <input type="radio" name="estrellas" id="radio3" value="3">
+                        <label for="radio3">
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.00016 8.31066L9.42008 10.3359L8.51253 6.51887L11.534 3.95062L7.55518 3.61398L6.00016 0.0195312L4.44515 3.61398L0.466309 3.95062L3.48226 6.51887L2.58024 10.3359L6.00016 8.31066Z"
+                                    fill="#FB8200" />
+                            </svg>
+                        </label>
+                        <input type="radio" name="estrellas" id="radio2" value="2">
+                        <label for="radio2">
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.00016 8.31066L9.42008 10.3359L8.51253 6.51887L11.534 3.95062L7.55518 3.61398L6.00016 0.0195312L4.44515 3.61398L0.466309 3.95062L3.48226 6.51887L2.58024 10.3359L6.00016 8.31066Z"
+                                    fill="#FB8200" />
+                            </svg>
+                        </label>
+                        <input type="radio" name="estrellas" id="radio1" value="1">
+                        <label for="radio1">
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.00016 8.31066L9.42008 10.3359L8.51253 6.51887L11.534 3.95062L7.55518 3.61398L6.00016 0.0195312L4.44515 3.61398L0.466309 3.95062L3.48226 6.51887L2.58024 10.3359L6.00016 8.31066Z"
+                                    fill="#FB8200" />
+                            </svg>
+                        </label>
+                        <span>{{producto.stars}}</span>
+                    </div>
+                    <button>Editar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
