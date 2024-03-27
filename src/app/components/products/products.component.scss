@@ -1,30 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 main{
-    font-family: Inter;
+    font-family: 'Inter';
     background-color: #EEEEEE;
     padding: 60px 200px;
-    section{
+    .container{
         background-color: #FFFFFF;
-        padding: 50px;
+        padding: 20px;
         border-radius: 10px;
         .botones {
-                width: 10%;
+                width: 100%;
             }
-        
             .lista {
-                font-size: 20px;
+                font-weight: 700;
+                font-size: 24px;
+                color: #000000;
             }
-        
             .products {
                 width: 100%;
-                height: 70%;
+                height: auto;
                 display: flex;
                 flex-wrap: wrap;
-        
-                img {
-                    height: 100%;
+                margin-left: -10px;
+                
+                .product{
+                    width: 50%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin: 20px 0px;
+                    @media (min-width: 768px) {
+                        width: 25%;
+                        /* Utilizar el 25% del ancho para pantallas más grandes */
+                    }
+                
+                    img {
+                        width: 100%;
+                        height: 150px;
+                        object-fit: cover;
+                        margin: auto;
+                    }
+                    h4{
+                        margin-top: 25px;
+                        width: 100%;
+                        height: 30px;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                    }
+                    h3{
+                        width: 100%;
+                        height: 30px;
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 36px;
+                        margin: 5px 0px;
+                    }
+                    span{
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                    .valoracion{
+                        // direction: rtl;  /* right to left */
+                        // unicode-bidi: bidi-override;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        input[type="radio"]:checked + label{
+                            color: orange;
+                            // color: grey;
+                            // &:hover {
+                            //     color: orange;
+                            // }
+                        }
+
+                        input[type="radio"] {
+                            display: none;
+                        }
+                        
+                    }
+                    button {
+                        background-color: #FFFFFF;
+                        color: #00579F;
+                        // align-self: flex-end;
+                        margin-left:14px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        align-content: center;
+                    }
                 }
             }
     }
-    
+    @media only screen and (max-width: 600px){
+        .container{
+            padding: 10px;
+        }
+        .products{
+            .product{
+                width: 100%;
+            }
+        }
+    }
 }

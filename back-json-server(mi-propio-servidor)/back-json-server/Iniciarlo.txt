@@ -1,0 +1,8 @@
+json-server --watch nombredelarchivo.json
+
+
+Para crear el bat 
+@echo off
+cd /d %~dp0
+json-server --watch nombredelarchivo.json
+pause

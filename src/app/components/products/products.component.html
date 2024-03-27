@@ -1,6 +1,6 @@
 <main>
-    <section>
-        <div class="botones">   <!-- Botones de filtro, búsqueda y vista-->
+    <section class="container">
+        <div class="botones">   <!-- Botones de filtro, búsqueda y vista, tengo intención de hacerlos (investigar cómo se hacen) si termino a tiempo y poco frustrada todos los campos solicitados del proyecto -->
 
         </div>
         <h2 class="lista">Listado de productos</h2>
@@ -9,8 +9,9 @@
                 <div>
                     <img [src]="producto.image" alt="">
                     <h4>{{producto.name}}</h4>
-                    <h3>{{producto.price}}</h3>
+                    <h3>{{producto.price}}€</h3>
                     <span>{{producto.description}}</span>
+                <!--    He intentado que las estrellas fuesen clickables, apareciesen en gris y en función de tantas estrellas clicke el cliente, se activen en naranja... Pero no ha tenido mucho éxito y he priorizado, aparcarlo de momento para poder abordar otras tareas que sí has solicitado entregar  -->
                     <div class="valoracion">
                         <input type="radio" name="estrellas" id="radio5" value="5">
                         <label for="radio5">
@@ -20,7 +21,7 @@
                                 fill="#FB8200" />
                             </svg>
                         </label>
-                        <input type="radio" name="estrellas" id="radio4" value="4">
+                        <input type="radio" name="estrellas" id="radio4" value="4" >
                         <label for="radio4">
                             <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -28,7 +29,7 @@
                                 fill="#FB8200" />
                             </svg>
                         </label>
-                        <input type="radio" name="estrellas" id="radio3" value="3">
+                        <input type="radio" name="estrellas" id="radio3" value="3" >
                         <label for="radio3">
                             <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -36,7 +37,7 @@
                                     fill="#FB8200" />
                             </svg>
                         </label>
-                        <input type="radio" name="estrellas" id="radio2" value="2">
+                        <input type="radio" name="estrellas" id="radio2" value="2" >
                         <label for="radio2">
                             <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -44,7 +45,7 @@
                                     fill="#FB8200" />
                             </svg>
                         </label>
-                        <input type="radio" name="estrellas" id="radio1" value="1">
+                        <input type="radio" name="estrellas" id="radio1" value="1" >
                         <label for="radio1">
                             <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -53,8 +54,9 @@
                             </svg>
                         </label>
                         <span>{{producto.stars}}</span>
+                        <button routerLink="/gestion/{{producto.id}}" class="btn btn-info">Editar</button>
                     </div>
-                    <button>Editar</button>
+                    
                 </div>
             </div>
         </div>

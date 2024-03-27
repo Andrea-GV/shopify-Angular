@@ -1,11 +1,12 @@
 <main>
     <section class="container">
         <div class="row">
-            <h2 class="titulo">Creación/edición de productos</h2>
+            <h2 class="titulo">Edición de productos</h2>
             <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="formulario col-6">
                 <div class="mb-3">
                     <label class="form-label">Nombre del producto</label>
-                    <input type="text" formControlName="name" placeholder="Por ej: Bufanda de punto" class="form-control">
+                    <input type="text" formControlName="name" placeholder="Por ej: Bufanda de punto"
+                        class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Precio</label>
@@ -13,22 +14,24 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Descripción</label>
-                    <textarea type="text" formControlName="description" placeholder="Por ej: Lo más vendido este mes" class="form-control"></textarea>
+                    <textarea type="text" formControlName="description" placeholder="Por ej: Lo más vendido este mes"
+                        class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Ruta de la imagen</label>
-                    <input type="text" formControlName="image" placeholder="Por ej: https://google-images.com/img.jpg" class="form-control">
+                    <input type="text" formControlName="image" placeholder="Por ej: https://google-images.com/img.jpg"
+                        class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Opiniones</label>
                     <input type="text" placeholder="Por ej: 4,1" class="form-control" formControlName="stars">
                 </div>
-                <div >
-                    <button type="submit" class="btn" [disabled]="!formulario.valid">Guardar</button>
+                <div>
+                    <button type="submit" class="btn" [disabled]="!formulario.valid">Editar</button>
                 </div>
             </form>
-            
-            
+
+
             <!-- Barra divisoria TEMPORALMENTE EN ESTA SECTION -->
             <div class="col-1">
                 <svg width="3" height="434" viewBox="0 0 3 434" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +53,7 @@
             </section>
         </div>
     </section>
-    
+
 
 
 </main>
