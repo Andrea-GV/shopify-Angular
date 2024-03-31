@@ -2,7 +2,8 @@
     <section class="container">
         <div class="row">
             <h2 class="titulo">Regístrate</h2>
-            <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="col-3"></div>
+            <form class="formulario col-6" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label class="form-label">Username</label>
                     <input type="text" class="form-control" formControlName="username">
@@ -17,6 +18,7 @@
                 </div>
                 <input type="submit" value="Registrarme" class="btn">
             </form>
+            <div class="col-3"></div>
         </div>
 </section>
 </main>

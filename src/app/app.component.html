@@ -32,7 +32,7 @@
       <ul class="users">
         <li [ngClass]="{'active': seccionActual === 'registro'}" (click)="cambiarSeccion('registro')" [routerLink]="['registro']">Registro</li>
         <li [ngClass]="{'active': seccionActual === 'login'}" (click)="cambiarSeccion('login')" [routerLink]="['login']">Login</li>
-        <li [ngClass]="{'active': seccionActual === 'login'}" (click)="cambiarSeccion('login')" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Logout</li>
+        <li [ngClass]="{'active': seccionActual === 'logout'}" (click)="cambiarSeccion('logout')" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Logout</li>
       </ul>
     </div>
         <ul> <!-- Menú, Prods, Gestión -->

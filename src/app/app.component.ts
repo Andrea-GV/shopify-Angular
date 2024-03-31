@@ -50,6 +50,8 @@ export class AppComponent {
       this.seccionActual = 'gestion';
     } else if (rutaActual === '/login') {
       this.seccionActual = 'login';
+    }else if (rutaActual === '/logout') {
+    this.seccionActual = 'logout';
     } else if (rutaActual === '/registro') {
       this.seccionActual = 'registro';
     } else {
