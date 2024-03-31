@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { GestionComponent } from './components/gestion/gestion.component';
-import { ProductosService } from './services/productos.service';
+import { ProductosService } from './core/services/productos.service';
 import { EditarProdsComponent } from './components/editar-prods/editar-prods.component';
 import { FormLoginComponent } from './components/user-login/user-login.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';

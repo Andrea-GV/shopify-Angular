@@ -1,8 +1,8 @@
-import { ProductosService } from './../../services/productos.service';
+import { ProductosService } from '../../core/services/productos.service';
 import { Component, EventEmitter, Output, Input, inject } from '@angular/core';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Product } from 'src/app/interfaces/product.interface';
+import { Product } from 'src/app/core/interfaces/product.interface';
 
 @Component({
   selector: 'app-gestion',

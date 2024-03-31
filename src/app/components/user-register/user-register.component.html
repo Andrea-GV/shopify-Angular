@@ -2,7 +2,7 @@
     <section class="container">
         <div class="row">
             <h2 class="titulo">Regístrate</h2>
-            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label class="form-label">Username</label>
                     <input type="text" class="form-control" formControlName="username">
@@ -15,7 +15,7 @@
                     <label class="form-label">Password</label>
                     <input type="password" class="form-control" formControlName="password">
                 </div>
-                <input type="submit" value="Enviar" class="btn">
+                <input type="submit" value="Registrarme" class="btn">
             </form>
         </div>
 </section>

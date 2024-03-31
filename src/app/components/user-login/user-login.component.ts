@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-form-login',
@@ -29,20 +29,30 @@ export class FormLoginComponent {
   }
 
   async onSubmit() {
-  const response = await this.usersService.login(this.formulario.value);
-    if (response.success) {
-      // Alerta avisando del login correcto
-      alert('Login correcto');
-
-      // *************** REVISAR TODO ESTO
-      // ¿Cómo nos guardamos el token?
+    try {
+      const response = await this.usersService.login(this.formulario.value);
+      alert('Usuario logado correctamente');
       localStorage.setItem('token_crm', response.token!);
-      // ¿Redirigimos? ¿Dónde?
-      // /empleados
-      this.router.navigateByUrl('/productos');
-    } else {
-      alert(response.error);
+      this.router.navigateByUrl('/gestion');
+    } catch (error) {
+      alert('Error en login');
     }
-  }
+    
+    // ESTO NOS DIO ERROR QUE NO SABÍAMOS DE QUÉ MANERA MANEJAR YA Y LO CAMBIAMOS POR EL TRY - CATCH... Pero traga TODO
+  // const response = await this.usersService.login(this.formulario.value);
+  //   if (response.success) {
+  //     // Alerta avisando del login correcto
+  //     alert('Login correcto');
+
+  //     // *************** REVISAR TODO ESTO
+      
+  //     // ¿Cómo nos guardamos el token?
+  //     localStorage.setItem('token_crm', response.token!);
+
+  //     this.router.navigateByUrl('/productos');
+  //   } else {
+  //     alert(response.error);
+  //   }
+   }
 
 }

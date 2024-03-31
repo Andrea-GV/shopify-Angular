@@ -3,7 +3,7 @@
     <section class="container">
         <div class="row">
             <h2 class="titulo">Logéate</h2>
-            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="mb-3">
                     <label class="form-label">Email</label>
                     <input type="text" class="form-control" formControlName="email">
@@ -12,7 +12,7 @@
                     <label class="form-label">Password</label>
                     <input type="password" class="form-control" formControlName="password">
                 </div>
-                <input type="submit" value="Enviar" class="btn">
+                <input type="submit" value="Login" class="btn">
             </form>
         </div>
     </section>

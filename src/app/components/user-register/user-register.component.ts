@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-user-register',
@@ -19,9 +19,10 @@ export class UserRegisterComponent {
    constructor(
     private formBuilder: FormBuilder,
     private usersService: UsersService,
-    private router: Router)
+     private router: Router
+   )
   {
-     this.formulario = this.formBuilder.group({
+    this.formulario = this.formBuilder.group({
     username: [],
     email: ['', Validators.required],
     password: ['', Validators.required]
@@ -30,13 +31,20 @@ export class UserRegisterComponent {
 
 
   async onSubmit() {
-    const response = await this.usersService.registro(this.formulario.value);
-    if (response.success) {
+    try {
+      const response = await this.usersService.registro(this.formulario.value);
       alert('Usuario registrado correctamente');
-       this.router.navigateByUrl('/login');
-    } else {
-      alert('Error en registro');
-    }
+      this.router.navigateByUrl('/login');
+    } catch (error) {
+      alert('Error en el registro');
+  }
+    // const response = await this.usersService.registro(this.formulario.value);
+    // if (response.success) {
+    //   alert('Usuario registrado correctamente');
+    //    this.router.navigateByUrl('/login');
+    // } else {
+    //   alert('Error en registro');
+    // }
   }
 }
 

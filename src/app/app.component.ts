@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { UsersService } from './core/services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,12 @@ export class AppComponent {
   // Por defecto, siempre caerá en Home
   seccionActual: string = 'Home';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+  ) { }
   @Input() nav: string = '';
+
+  usersService = inject(UsersService);
 
   ngOnInit():void {
     // this.nav = '';
@@ -29,7 +34,13 @@ export class AppComponent {
     this.seccionActual = opcion;
     // console.log('después',this.router.url);
   }
-  
+  // Para hacer el logout
+  onClickLogout() {
+    localStorage.removeItem('token_crm');
+    alert('Hasta pronto!')
+    this.router.navigateByUrl('/login');
+  }
+
   // Para que al hacer click cambie de sección, el routing y el click
   private actualizarSeccionActual() {
     const rutaActual = this.router.url;

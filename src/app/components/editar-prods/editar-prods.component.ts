@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { ProductosService } from './../../services/productos.service';
+import { ProductosService } from '../../core/services/productos.service';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/interfaces/product.interface';
+import { Product } from 'src/app/core/interfaces/product.interface';
 
 @Component({
   selector: 'app-editar-prods',

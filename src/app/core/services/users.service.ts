@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Usuario } from '../interfaces/user.interface';
 import { firstValueFrom } from 'rxjs';
 
@@ -22,14 +22,18 @@ type LoginResponse = {
 })
 export class UsersService {
 
-  private baseUrl = 'http://localhost:3000/users';
+  private baseUrl = 'http://localhost:3000';
 
-  private httpClient = inject(HttpClient);
+  // private httpClient = inject(HttpClient);
+  // lo cambio por un constructor
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   registro(nuevoUsuario: Usuario) {
     return firstValueFrom(
       this.httpClient.post<RegistroResponse>(
-        `${this.baseUrl}`,
+        `${this.baseUrl}/registro`,
         nuevoUsuario
       )
     )
@@ -38,7 +42,7 @@ export class UsersService {
   login(body: LoginBody) {
     return firstValueFrom(
       this.httpClient.post<LoginResponse>(
-        `${this.baseUrl}`,
+        `${this.baseUrl}/login`,
         body
       )
     );
@@ -47,5 +51,5 @@ export class UsersService {
   isLogged() {
     return localStorage.getItem('token_crm') ? true : false;
   }
-
+  
 }

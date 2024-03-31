@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
-import { ProductosService } from './../../services/productos.service';
+import { ProductosService } from '../../core/services/productos.service';
 import { Component, inject } from '@angular/core';
-import { Product } from 'src/app/interfaces/product.interface';
+import { Product } from 'src/app/core/interfaces/product.interface';
 // import { Product } from 'src/app/interfaces/product.interface';
 
 @Component({
