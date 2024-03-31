@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+main {
+    font-family: 'Inter';
+    background-color: #EEEEEE;
+    padding: 60px 200px;
+    color: #19191D;
+
+    .container {
+        background-color: #EEEEEE;
+
+        .row {
+            background-color: #FFFFFF;
+            padding: 50px;
+            border-radius: 10px;
+
+            h2 {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 36px;
+                padding-bottom: 50px;
+            }
+
+            .formulario {
+
+                .form-label {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                .form-control {
+                    border: 1px solid #444444;
+
+                    &:hover {
+                        border: 2px solid #FFC970;
+                    }
+                }
+
+                .btn {
+                    background-color: #F89F21;
+                    color: #FFFFFF;
+                    width: 150px;
+                    height: 32px;
+                    text-align: center;
+                    margin-left: 70%;
+
+                    &:hover {
+                        color: #00579F;
+                    }
+                }
+            }
+        }
+    }
+}

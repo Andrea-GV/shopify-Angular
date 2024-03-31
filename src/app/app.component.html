@@ -1,6 +1,6 @@
 <header>
   <nav>
-    <div> <!-- Aquí el shopéame-->
+    <div> <!-- Aquí el shopéame             Login - Registro -->
       <svg id="Capa_Shop" data-name="Capa Shop" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.26 89.84">
         <defs>
@@ -29,9 +29,13 @@
         <path class="cls-3"
           d="M31.18,50.54l2.65-3.33a15.39,15.39,0,0,0,3.75,2.49,9.61,9.61,0,0,0,3.84.77,6.27,6.27,0,0,0,3.33-.77,2.31,2.31,0,0,0,1.24-2,2.1,2.1,0,0,0-.86-1.8,6.61,6.61,0,0,0-2.82-1l-4.44-.76a7.77,7.77,0,0,1-4.39-2,5.5,5.5,0,0,1-1.47-4,5.93,5.93,0,0,1,2.37-5,10.45,10.45,0,0,1,6.46-1.82,15.1,15.1,0,0,1,4.9.83,14.1,14.1,0,0,1,4.35,2.3L47.59,38a13.43,13.43,0,0,0-3.52-2,9.85,9.85,0,0,0-3.55-.67,5.48,5.48,0,0,0-3,.71,2,2,0,0,0-1.12,1.82,1.91,1.91,0,0,0,.73,1.6,5.42,5.42,0,0,0,2.47.83l4.22.71a9.13,9.13,0,0,1,5,2.14,5.39,5.39,0,0,1,1.7,4.16A6.23,6.23,0,0,1,48,52.46a11,11,0,0,1-6.85,1.95,14.36,14.36,0,0,1-5.31-1A15,15,0,0,1,31.18,50.54Z" />
       </svg>
+      <ul class="users">
+        <li [ngClass]="{'active': seccionActual === 'login'}" (click)="cambiarSeccion('login')" [routerLink]="['/login']">Login</li>
+        <li [ngClass]="{'active': seccionActual === 'registro'}" (click)="cambiarSeccion('registro')" [routerLink]="['/registro']">Registro</li>
+      </ul>
     </div>
         <ul> <!-- Menú, Prods, Gestión -->
-            <li [ngClass]="{'active': seccionActual === 'Home'}" (click)="cambiarSeccion('Home')" [routerLink]="['']"> <!-- Home -->
+            <li [ngClass]="{'active': seccionActual === 'home'}" (click)="cambiarSeccion('home')" [routerLink]="['']"> <!-- Home -->
               <svg id="Capa_Home" data-name="Capa Home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.67 28.6">
                 <defs>
                   <style>
@@ -45,7 +49,7 @@
               </svg>
               Home
             </li>
-            <li [ngClass]="{'active': seccionActual === 'Prods'}" (click)="cambiarSeccion('Prods')" [routerLink]="['/productos']"> <!-- Prods -->
+            <li [ngClass]="{'active': seccionActual === 'productos'}" (click)="cambiarSeccion('productos')" [routerLink]="['/productos']"> <!-- Prods -->
               <svg id="Capa_Prods" data-name="Capa Prods" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.67 28.6">
                 <defs>
                   <style>
@@ -59,7 +63,7 @@
               </svg>
               Prods
             </li>
-            <li [ngClass]="{'active': seccionActual === 'Gestion'}" (click)="cambiarSeccion('Gestion')" [routerLink]="['/gestion']"> <!-- Gestión -->
+            <li [ngClass]="{'active': seccionActual === 'gestion'}" (click)="cambiarSeccion('gestion')" [routerLink]="['/gestion']"> <!-- Gestión -->
               <svg id="Capa_Gestion" data-name="Capa Gestion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.67 28.6">
                 <defs>
                   <style>

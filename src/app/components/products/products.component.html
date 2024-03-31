@@ -54,7 +54,8 @@
                             </svg>
                         </label>
                         <span>{{producto.stars}}</span>
-                        <button routerLink="/gestion/{{producto.id}}" class="btn btn-info">Editar</button>
+                        <button (click)="editProduct(producto)" class="btn btn-info">Editar</button>
+                        <!-- routerLink="/gestion/{{producto.id}}" -->
                     </div>
                     
                 </div>

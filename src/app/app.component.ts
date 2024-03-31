@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,25 +11,39 @@ export class AppComponent {
   // Por defecto, siempre caerá en Home
   seccionActual: string = 'Home';
 
-  constructor(private router: Router) {
-    
-  }
+  constructor(private router: Router) {}
   @Input() nav: string = '';
 
-  // para crear las opciones en función del routing
-  nav1: string = 'Home';
-  nav2: string = 'Prods';
-  nav3: string = 'Gestion';
-
-  ngOnInput() {
-    this.nav = '';
+  ngOnInit():void {
+    // this.nav = '';
+     this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.actualizarSeccionActual();
+      }
+    });
   }
-  
-  // pero creo q no lo he aplicado
-  cambiarSeccion(nav: string) {
+ 
+
+  cambiarSeccion(opcion: string) {
     // console.log('antes',this.router.url);
-    
-    this.seccionActual = nav;
+    this.seccionActual = opcion;
     // console.log('después',this.router.url);
   }
+  
+  // Para que al hacer click cambie de sección, el routing y el click
+  private actualizarSeccionActual() {
+    const rutaActual = this.router.url;
+    if (rutaActual === '/productos') {
+      this.seccionActual = 'productos';
+    } else if (rutaActual === '/gestion') {
+      this.seccionActual = 'gestion';
+    } else if (rutaActual === '/login') {
+      this.seccionActual = 'login';
+    } else if (rutaActual === '/registro') {
+      this.seccionActual = 'registro';
+    } else {
+      this.seccionActual = 'home';
+    }
+  }
 }
+

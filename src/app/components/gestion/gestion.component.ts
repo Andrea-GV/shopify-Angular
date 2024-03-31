@@ -57,7 +57,7 @@ export class GestionComponent {
       this.productosService.create(this.formulario.value);
       this.router.navigateByUrl('/productos')
     } else {
-      alert('Echa un ojo al formulario')
+      alert('Revisa el error en el formulario')
     }
 
     // Le decimos que añada al array el producto creado
@@ -67,6 +67,8 @@ export class GestionComponent {
     // una vez recogido, reinicia el nP para que no arrastre todo
     this.nuevoProducto = {id: 0, name:'', price: 0, description: '', stars: 0, image: ''}
   }
-
+  updatePreview() {
+    this.nuevoProducto = this.formulario.value;
+  }
 }
 

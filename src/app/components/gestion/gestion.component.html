@@ -9,7 +9,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Precio</label>
-                    <input type="text" formControlName="price" placeholder="Por ej: 9,50€" class="form-control">
+                    <input type="number" formControlName="price" placeholder="Por ej: 9,50€" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Descripción</label>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Opiniones</label>
-                    <input type="text" placeholder="Por ej: 4,1" class="form-control" formControlName="stars">
+                    <input type="number" max="5" min="1" placeholder="Por ej: 4,1" class="form-control" formControlName="stars">
                 </div>
                 <div >
                     <button type="submit" class="btn" [disabled]="!formulario.valid">Guardar</button>
@@ -39,12 +39,13 @@
             <section class="col-5">
                 <div class="products">
                     <h4 class="titulo">Preview del producto</h4>
-                    <div class="product" *ngFor="let prod of arrProductos, let i = index">
-                        <img [src]="prod.image" alt="">
-                        <h4>{{ prod.name }}</h4>
-                        <h3>Precio: {{prod.price}} €</h3>
-                        <span>Descripción: {{prod.description}}</span>
-                        <span>Opinión: {{prod.stars}}</span>
+                    <div class="product" *ngIf="formulario.valid">
+                        <!-- Antes del *ngIF estaba este otro *ngFor="let prod of arrProductos, let i = index" (click)="loadProductData()" -->
+                        <img [src]="formulario.value.image" alt="">
+                        <h3>{{formulario.value.name }}</h3>
+                        <h4>Precio: {{formulario.value.price}} €</h4>
+                        <p>Descripción: {{formulario.value.description}}</p>
+                        <span>Opinión: {{formulario.value.stars}}</span>
                     </div>
                 </div>
             </section>

@@ -11,6 +11,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { GestionComponent } from './components/gestion/gestion.component';
 import { ProductosService } from './services/productos.service';
 import { EditarProdsComponent } from './components/editar-prods/editar-prods.component';
+import { FormLoginComponent } from './components/user-login/user-login.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { EditarProdsComponent } from './components/editar-prods/editar-prods.com
     HomeComponent,
     ProductsComponent,
     GestionComponent,
-    EditarProdsComponent
+    EditarProdsComponent,
+    FormLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,

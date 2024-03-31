@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { ProductosService } from './../../services/productos.service';
 import { Component, inject } from '@angular/core';
+import { Product } from 'src/app/interfaces/product.interface';
 // import { Product } from 'src/app/interfaces/product.interface';
 
 @Component({
@@ -18,13 +20,15 @@ export class ProductsComponent {
   // selectStar(star: number) {
   //   this.selectedStar = star;
   // }
-
-  productosService = inject(ProductosService);
+   constructor(private router: Router, private productosService: ProductosService) { }
+  // productosService = inject(ProductosService);
 
   async ngOnInit() {
     const response = await this.productosService.getAllProm();
     this.arrProductos = response;
-
+  }
+  editProduct(producto: Product): void {
+    this.router.navigate(['gestion/', producto.id]);
   }
 }
 
